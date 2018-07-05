@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>WTFormat!?</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.min.css">
+  </head>
+
+  <body onload="main();">
+    <div class="header">
+      <h1 class="wtformat"><span class="wtf">WTF</span>ormat!?</h1>
+      <p>
+        A simple utility for generating <a href="http://momentjs.com/docs/#/displaying/format/">moment.js</a> format codes
+      </p>
+    </div>
+    <div class="getFormat">
+      <h2>Get format</h2>
+      <p>
+        Enter the following date in your preferred format:
+        <br /><br/>
+        <code id="shownDate"></code>
+      </p>
+      <br />
+      <input id="input" type="text"/>
+      <button class="generate" onclick="evaluateDate()">
+        Generate
+      </button>
+    </div>
+    <div class="formatOutput">
+      <h2>Moment format code:</h2>
+      <ul id="output">
+        <li>Enter a date and click generate to see your date format!</li>
+      </ul>
+    </div>
+    <div class="why">
+      <h2>What is it?</h2>
+      <p>
+        WTFormat provides an easy way to figure out what code to pass into <code>moment().format</code>
+        to result in your desired date-time format.
+      </p>
+      <p>
+        Note: at this time, only English day & month names are supported.
+      </p>
+      <h2>How do I use it?</h2>
+      <ol>
+        <li>Look at the date-time given</li>
+        <li>Write that date-time in the format you want moment to output</li>
+        <li>Click "generate"</li>
+      </ol>
+      <p>
+        It's that easy!
+      </p>
+    </div>
+    <div class="examples">
+      <h2>Examples</h2>
+      <table>
+        <tr>
+          <th>Format</th>
+          <th>Code</th>
+        </tr>
+        <tr>
+          <td>
+            Thu. September 6, 2012 at 8:45 AM
+          </td>
+          <td>
+            <code>
+              ddd. MMMM D, YYYY [at] h:mm A
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2012-09-06, 8 h 45
+          </td>
+          <td>
+            <code>
+              YYYY-MM-DD, H [h] mm
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Sep. 6th '12
+          </td>
+          <td>
+            <code>
+              MMM. Do 'YY
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>The 6th of September, 2012</td>
+          <td>
+            <code>
+              [The] Do [of] MMMM, YYYY
+            </code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+
+</html>
