@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Muli:400|Oswald:300,400,500");
+body {
+  font-family: "Muli", sans-serif;
+  display: grid;
+  font-size: 1em;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 80em;
+  width: 90%;
+  min-width: 50em;
+  margin: 0 auto;
+  background-color: #f1f3f5;
+  color: #222;
+}
+
+body > div {
+  margin: 0.9em;
+  padding: 1.2em;
+}
+
+div.why, div.getFormat, div.examples, div.formatOutput {
+  box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
+  border-radius: 3px;
+  background-color: white;
+}
+
+div.getFormat, div.why {
+  grid-column: span 7 !important;
+}
+
+div.formatOutput, div.examples {
+  grid-column: span 5 !important;
+}
+
+.examples > table {
+  font-size: 0.9em;
+  border-collapse: collapse;
+}
+
+.examples td,
+.examples th {
+  border: 1px solid #222;
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+code {
+  background-color: #eee;
+  border-radius: 2px;
+  font-family: "Fira Mono", monospace;
+  font-size: 1em;
+}
+
+.header {
+  text-align: center;
+  grid-column: span 12;
+  margin-bottom: 0;
+}
+
+.header > p {
+  font-size: 1.1em;
+}
+
+h2,
+h3,
+h4 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+
+h1.wtformat {
+  font-family: "Oswald", sans-serif;
+  color: #333;
+  font-size: 3em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.wtf {
+  color: #226ccc;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+input#input {
+  padding: 0.4em;
+  font-size: 1.1em;
+  min-width: 20em;
+  border-radius: 2px;
+  border: 1px solid #666;
+}
+
+button.generate {
+  color: white;
+  background-color: #226ccc;
+  border: none;
+  padding: 0.4em;
+  padding-bottom: calc(0.4em - 2px);
+  font-size: 1.1em;
+  border-radius: 2px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+}
+
+button.generate:hover {
+  background-color: #5794e3;
+  border-bottom: 2px solid #226ccc;
+  box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
+}
+
+button.generate:active {
+  background-color: #99beee;
+  border-bottom: 2px solid #5794e3;
+  box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
+}
+/*# sourceMappingURL=styles.css.map */

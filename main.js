@@ -111,7 +111,7 @@ function evaluateDate() {
   }
   if (!possibilities.length) {
     const entry = document.createElement('li');
-    const text = document.createTextNode('No matches.');
+    const text = document.createTextNode('Enter a date and click generate to see your date format!');
     entry.appendChild(text);
     list.appendChild(entry);
   }
