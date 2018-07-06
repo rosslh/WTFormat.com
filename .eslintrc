@@ -8,6 +8,8 @@
         "browser": true
     },
     "globals": {
-        "moment": true
+        "moment": true,
+        "dates": true,
+        "dateAtoms": true
     }
 }

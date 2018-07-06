@@ -1,43 +1,3 @@
-const dateAtoms = [
-  'M',
-  'Mo',
-  'MM',
-  'MMM',
-  'MMMM',
-  'Q',
-  'Qo',
-  'D',
-  'Do',
-  'DD',
-  'DDD',
-  'DDDo',
-  'DDDD',
-  'd',
-  'E',
-  'do',
-  'dd',
-  'ddd',
-  'dddd',
-  'w',
-  'wo',
-  'ww',
-  'W',
-  'Wo',
-  'WW',
-  'YY',
-  'YYYY',
-  'A',
-  'a',
-  'H',
-  'HH',
-  'h',
-  'hh',
-  'mm',
-  'ss',
-  'X',
-  'x',
-];
-
 let time;
 
 function numDuplicateAtoms(timestamp) {
@@ -45,23 +5,22 @@ function numDuplicateAtoms(timestamp) {
   return parts.length - new Set(parts).size;
 }
 
-function generateDate() {
+function generateDates() {
   const rightNow = moment().unix();
-  let timestamp = moment.unix(rightNow);
-  let dups = numDuplicateAtoms(timestamp);
-  while (dups > 1) {
-    // either H & HH or ? have to be the same
+  const good = [];
+  let tries = 0;
+  while (tries < 100000) {
     const newTS = moment.unix(Math.floor(Math.random() * rightNow));
-    if (numDuplicateAtoms(newTS) < numDuplicateAtoms(timestamp)) {
-      timestamp = newTS;
-      dups = numDuplicateAtoms(newTS);
+    if (numDuplicateAtoms(newTS) <= 1) {
+      good.push(newTS.format('X'));
     }
+    tries += 1;
   }
-  return timestamp;
+  console.log(good); // eslint-disable-line no-console
 }
 
 function main() {
-  time = generateDate();
+  time = moment(dates[Math.floor(Math.random() * dates.length)], 'X');
   document.getElementById('input').placeholder = time.format('YYYY-MM-DD');
   document.getElementById('shownDate').innerText = time.format('dddd, MMMM D, YYYY h:mm:ss A');
 }
