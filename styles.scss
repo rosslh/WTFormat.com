@@ -1,8 +1,8 @@
 // compileOnSave
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Muli:400|Oswald:300,400,500');
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Muli:400|Oswald:300,400,500");
 
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   display: grid;
   font-size: 0.9em;
   grid-template-columns: repeat(12, 1fr);
@@ -10,7 +10,7 @@ body {
   width: 90%;
   min-width: 50em;
   margin: 0 auto;
-  background-color: #F1F3F5;
+  background-color: #f1f3f5;
   color: #222;
   > div {
     margin: 0.9em;
@@ -19,15 +19,21 @@ body {
 }
 
 div {
-  &.why, &.getFormat, &.examples, &.formatOutput {
-    box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
+  &.why,
+  &.getFormat,
+  &.examples,
+  &.formatOutput {
+    box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03),
+      0 1px 2px rgba(102, 119, 136, 0.3);
     border-radius: 3px;
     background-color: white;
   }
-  &.getFormat, &.why {
+  &.getFormat,
+  &.why {
     grid-column: span 7 !important;
   }
-  &.formatOutput, &.examples {
+  &.formatOutput,
+  &.examples {
     grid-column: span 5 !important;
   }
 }
@@ -37,7 +43,8 @@ div {
     font-size: 0.9em;
     border-collapse: collapse;
   }
-  td, th {
+  td,
+  th {
     border: 1px solid #222;
     padding: 0.5em;
     border-radius: 3px;
@@ -47,7 +54,7 @@ div {
 code {
   background-color: #eee;
   border-radius: 2px;
-  font-family: 'Fira Mono', monospace;
+  font-family: "Fira Mono", monospace;
   font-size: 1em;
 }
 
@@ -60,13 +67,15 @@ code {
   }
 }
 
-h2, h3, h4 {
-  font-family: 'Oswald', sans-serif;
+h2,
+h3,
+h4 {
+  font-family: "Oswald", sans-serif;
   font-weight: 300;
 }
 
 h1.wtformat {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #333;
   font-size: 3em;
   font-weight: 400;
@@ -89,7 +98,7 @@ input#input {
 
 button.generate {
   color: white;
-  background-color: #226CCC;
+  background-color: #226ccc;
   border: none;
   padding: 0.4em;
   padding-bottom: calc(0.4em - 2px);
@@ -102,12 +111,14 @@ button.generate {
   border-bottom: 2px solid transparent;
   &:hover {
     background-color: #5794e3;
-    border-bottom: 2px solid #226CCC;
-    box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
+    border-bottom: 2px solid #226ccc;
+    box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03),
+      0 1px 2px rgba(102, 119, 136, 0.3);
   }
   &:active {
     background-color: #99beee;
     border-bottom: 2px solid #5794e3;
-    box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
+    box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03),
+      0 1px 2px rgba(102, 119, 136, 0.3);
   }
 }

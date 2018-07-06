@@ -1,0 +1,23 @@
+{
+  "name": "wtformat",
+  "version": "0.0.0",
+  "description": "A web tool for generating moment.js date format codes",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosslh/WTFormat.git"
+  },
+  "author": "Ross Hill <github.com/rosslh>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rosslh/WTFormat/issues"
+  },
+  "homepage": "https://github.com/rosslh/WTFormat#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0"
+  }
+}
