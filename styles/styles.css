@@ -6,7 +6,6 @@ body {
   grid-template-columns: repeat(12, 1fr);
   max-width: 80em;
   width: 90%;
-  min-width: 50em;
   margin: 0 auto;
   background-color: #f1f3f5;
   color: #222;
@@ -23,12 +22,28 @@ div.why, div.getFormat, div.examples, div.formatOutput {
   background-color: white;
 }
 
-div.getFormat, div.why {
-  grid-column: span 7 !important;
+@media all and (min-width: 800px) {
+  div.getFormat, div.why {
+    grid-column: span 7 !important;
+  }
 }
 
-div.formatOutput, div.examples {
-  grid-column: span 5 !important;
+@media all and (max-width: 800px) {
+  div.getFormat, div.why {
+    grid-column: span 12 !important;
+  }
+}
+
+@media all and (min-width: 800px) {
+  div.formatOutput, div.examples {
+    grid-column: span 5 !important;
+  }
+}
+
+@media all and (max-width: 800px) {
+  div.formatOutput, div.examples {
+    grid-column: span 12 !important;
+  }
 }
 
 .examples > table {
@@ -84,7 +99,8 @@ h1.wtformat {
 input#input {
   padding: 0.4em;
   font-size: 1.1em;
-  min-width: 20em;
+  width: 50%;
+  min-width: 8em;
   border-radius: 2px;
   border: 1px solid #666;
 }

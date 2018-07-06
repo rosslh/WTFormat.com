@@ -7,7 +7,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   max-width: 80em;
   width: 90%;
-  min-width: 50em;
+  // min-width: 50em;
   margin: 0 auto;
   background-color: #f1f3f5;
   color: #222;
@@ -29,11 +29,21 @@ div {
   }
   &.getFormat,
   &.why {
-    grid-column: span 7 !important;
+    @media all and (min-width:800px){
+      grid-column: span 7 !important;
+    }
+    @media all and (max-width:800px){
+      grid-column: span 12 !important;
+    }
   }
   &.formatOutput,
   &.examples {
-    grid-column: span 5 !important;
+    @media all and (min-width:800px){
+      grid-column: span 5 !important;
+    }
+    @media all and (max-width:800px){
+      grid-column: span 12 !important;
+    }
   }
 }
 
@@ -90,7 +100,8 @@ h1.wtformat {
 input#input {
   padding: 0.4em;
   font-size: 1.1em;
-  min-width: 20em;
+  width: 50%;
+  min-width:8em;
   border-radius: 2px;
   border: 1px solid #666;
 }
@@ -114,7 +125,7 @@ button.generate {
     box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03),
       0 1px 2px rgba(102, 119, 136, 0.3);
   }
-  
+
   &:active {
     background-color: #99beee;
     border-bottom: 2px solid #5794e3;
