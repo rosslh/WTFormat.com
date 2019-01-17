@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/rosslh/WTFormat#readme",
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
