@@ -27,93 +27,36 @@
         type="text"
         :placeholder="time && moment(time).format('YYYY-MM-DD')"
       >
-      <button class="generate" @click="formats = getFormats(moment(time), userInput)">
-        Generate
+      <button class="generate" @click="getFormats(time, userInput, formats)">
+        Generate Codes
       </button>
     </div>
     <div class="formatOutput">
-      <h2>Moment format code:</h2>
-      <ul id="output">
-        <li v-if="!formats.length">
-          Enter a date and click generate to see your date format!
-        </li>
-        <li v-for="format in formats" :key="format">
-          <code>
-            {{ format }}
-          </code>
-        </li>
-      </ul>
-    </div>
-    <div class="why">
-      <h2>What is it?</h2>
-      <p>
-        Ever find yourself asking, <em>what moment.js date format is this?</em>
-      </p>
-      <p>
-        WTFormat provides an easy way to generate the code to pass into
-        <code>moment().format</code> that results in your desired date-time format.
-      </p>
-      <p>
-        <strong>Note</strong>: at this time, only English day & month names are supported.
-      </p>
-      <h2>How do I use it?</h2>
-      <ol>
-        <li>Look at the date-time given</li>
-        <li>Write that date-time in the format you want moment to output</li>
-        <li>Click "generate"</li>
-      </ol>
-      <p>
-        It's that easy!
-      </p>
-    </div>
-    <div class="examples">
-      <h2>Examples</h2>
+      <h2>Format codes:</h2>
+      <div v-if="!formats.moment.concat(formats.dateFns).length">
+        Enter a date and click generate to see your date format!
+      </div>
       <table>
-        <tr>
-          <th>Format</th>
-          <th>Code</th>
-        </tr>
-        <tr>
-          <td>
-            Thu. September 6, 2012 at 8:45 AM
-          </td>
-          <td>
-            <code>
-              ddd. MMMM D, YYYY [at] h:mm A
-            </code>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2012-09-06, 8 h 45
-          </td>
-          <td>
-            <code>
-              YYYY-MM-DD, H [h] mm
-            </code>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Sep. 6th '12
-          </td>
-          <td>
-            <code>
-              MMM. Do 'YY
-            </code>
-          </td>
-        </tr>
-        <tr>
-          <td>The 6th of September, 2012</td>
-          <td>
-            <code>
-              [The] Do [of] MMMM, YYYY
-            </code>
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>Moment</td>
+            <td>
+              <code v-for="format in formats.moment" :key="format">
+                {{ format }}
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>date-fns</td>
+            <td>
+              <code v-for="format in formats.dateFns" :key="format">
+                {{ format }}
+              </code>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
-    <div />
   </div>
 </template>
 
@@ -122,19 +65,24 @@ import Vue from 'vue';
 import moment from 'moment';
 
 import { evaluateDate } from '../js/main';
-import { dates } from '../js/constants';
+import { dates } from '../js/constants.js';
+
+interface FormatsInterface {
+  moment: string[],
+  dateFns: string[],
+}
 
 interface DataInterface {
   time: Date,
   userInput: string,
-  formats: string[]
+  formats: FormatsInterface
 }
 
-let time: Date;
+const time = new Date();
 const data: DataInterface = {
   time,
   userInput: '',
-  formats: []
+  formats: { moment: [], dateFns: [] }
 };
 
 export default Vue.extend({
@@ -145,7 +93,10 @@ export default Vue.extend({
   data: () => data,
 
   methods: {
-    getFormats: evaluateDate,
+    getFormats: (time: Date, userInput: string, formats: FormatsInterface) => {
+      formats.moment = evaluateDate(time, userInput, 'moment');
+      formats.dateFns = evaluateDate(time, userInput, 'dateFns');
+    },
     moment
   }
 });
