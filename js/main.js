@@ -1,10 +1,10 @@
-let time;
+import { dateAtoms } from './constants';
 
-function filterResults(date) {
+function filterResults (date) {
   return date;
 }
 
-function joinSuffixes(arr) {
+function joinSuffixes (arr) {
   let output = arr;
   const suffixes = ['st', 'th', 'nd', 'rd'];
   output.forEach((elem, i) => {
@@ -16,12 +16,12 @@ function joinSuffixes(arr) {
   return output;
 }
 
-function group(str) {
+function group (str) {
   return str.match(/(\d+|[A-Za-z]+|[^\dA-Za-z]+)/g);
 }
 
-function getFormats(timestamp, currentDate = group(document.getElementById('input').value)) {
-  const date = joinSuffixes(currentDate);
+export function evaluateDate (timestamp, currentDate) {
+  const date = joinSuffixes(group(currentDate) || []);
   let possibilities = [''];
   for (const part of date) {
     let newPos = [];
@@ -42,47 +42,4 @@ function getFormats(timestamp, currentDate = group(document.getElementById('inpu
     possibilities = newPos;
   }
   return possibilities.filter(filterResults);
-}
-
-function generateDates() {
-  const rightNow = moment().unix();
-  const good = [];
-  let tries = 0;
-  while (tries < 10000) {
-    const newTS = moment.unix(Math.floor(Math.random() * rightNow));
-    const formats = getFormats(moment(newTS, 'X'), group(newTS.format('dddd, MMMM D, YYYY h:mm:ss A')));
-    if (formats.length === 1) {
-      good.push(newTS.format('X'));
-    }
-    tries += 1;
-  }
-  console.log(good); // eslint-disable-line no-console
-}
-
-function main() {
-  time = moment(dates[Math.floor(Math.random() * dates.length)], 'X');
-  document.getElementById('input').placeholder = time.format('YYYY-MM-DD');
-  document.getElementById('shownDate').innerText = time.format('dddd, MMMM D, YYYY h:mm:ss A');
-}
-
-function evaluateDate() {
-  const formats = getFormats(time);
-  const list = document.getElementById('output');
-  while (list.firstChild) {
-    list.removeChild(list.firstChild);
-  }
-  if (!formats.length) {
-    const entry = document.createElement('li');
-    const text = document.createTextNode('Enter a date and click generate to see your date format!');
-    entry.appendChild(text);
-    list.appendChild(entry);
-  }
-  for (const f of formats) {
-    const entry = document.createElement('li');
-    const code = document.createElement('code');
-    const text = document.createTextNode(f);
-    code.appendChild(text);
-    entry.appendChild(code);
-    list.appendChild(entry);
-  }
 }

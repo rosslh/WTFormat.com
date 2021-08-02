@@ -1,4 +1,4 @@
-const dates = [
+export const dates = [
   '628548697',
   '247368434',
   '1154886986',
@@ -305,10 +305,10 @@ const dates = [
   '1217875348',
   '1449341586',
   '1283447651',
-  '1309803755',
+  '1309803755'
 ];
 
-const dateAtoms = [
+export const dateAtoms = [
   'M',
   'Mo',
   'MM',
@@ -345,5 +345,5 @@ const dateAtoms = [
   'mm',
   'ss',
   'X',
-  'x',
+  'x'
 ];
