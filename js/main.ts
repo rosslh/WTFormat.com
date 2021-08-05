@@ -1,7 +1,9 @@
 import { addYears, getUnixTime, format, fromUnixTime } from 'date-fns';
 import moment from 'moment';
-
-import { momentParts, dateFnParts } from './constants';
+import dayjs from 'dayjs';
+import { momentParts, dateFnParts, dayJsParts } from './constants';
+const advancedFormat = require('dayjs/plugin/advancedFormat');
+dayjs.extend(advancedFormat);
 
 function joinSuffixes (arr: string[]) {
   const output = arr;
@@ -20,21 +22,29 @@ function group (str: string) {
   return str.match(/(\d+|[A-Za-z]+|[^\dA-Za-z]+)/g) || [];
 }
 
-export function evaluateDate (timestamp: Date, currentDate: string, formatter: 'moment' | 'dateFns') {
+export function evaluateDate (timestamp: Date, currentDate: string, formatter: 'moment' | 'dateFns' | 'dayJs') {
   const config = {
     moment: {
       formatFn: (timestamp: Date, atom: string) => moment(timestamp).format(atom),
       escapeMarkers: '[]',
-      dateParts: momentParts
+      dateParts: momentParts,
+      preprocess: (str: string) => str
     },
     dateFns: {
       formatFn: (timestamp: Date, atom: string) => format(timestamp, atom),
       escapeMarkers: "''",
-      dateParts: dateFnParts
+      dateParts: dateFnParts,
+      preprocess: (str: string) => str.replace(/'/g, "''")
+    },
+    dayJs: {
+      formatFn: (timestamp: Date, atom: string) => dayjs(timestamp).format(atom),
+      escapeMarkers: '[]',
+      dateParts: dayJsParts,
+      preprocess: (str: string) => str
     }
   }[formatter];
 
-  const date = joinSuffixes(group(currentDate));
+  const date = joinSuffixes(group(config.preprocess(currentDate)));
   let possibilities = [''];
 
   for (const part of date) {
@@ -71,7 +81,8 @@ export function generateDates () {
     const formatted = moment(newTS).format('dddd, MM MMMM D, YYYY hh h:mm:ss A');
     const momentFormats = evaluateDate(newTS, formatted, 'moment');
     const dateFnsFormats = evaluateDate(newTS, formatted, 'dateFns');
-    if (momentFormats.length === 1 && dateFnsFormats.length === 1) {
+    const dayJsFormats = evaluateDate(newTS, formatted, 'dayJs');
+    if (momentFormats.length === 1 && dateFnsFormats.length === 1 && dayJsFormats.length === 1) {
       good.push(getUnixTime(newTS));
     }
     tries += 1;
