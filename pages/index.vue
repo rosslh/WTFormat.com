@@ -7,9 +7,9 @@
         </h1>
         <p>
           A simple utility for generating
-          <a href="https://date-fns.org/">date-fns</a>,
-          <a href="http://momentjs.com/">Moment.js</a>,
-          and <a href="https://day.js.org/en/">Day.js</a>
+          <a href="https://date-fns.org/" target="_blank" rel="noopener noreferrer">date-fns</a>,
+          <a href="http://momentjs.com/" target="_blank" rel="noopener noreferrer">Moment.js</a>,
+          and <a href="https://day.js.org/en/" target="_blank" rel="noopener noreferrer">Day.js</a>
           format codes. By <a href="https://rosshill.ca">Ross Hill</a>.
         </p>
       </div>

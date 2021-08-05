@@ -33,12 +33,18 @@ div.root {
 
   div.mainContent {
     display: flex;
-    flex-wrap: wrap;
 
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
+
+      > * {
+        width: 100% !important;
+      }
+    }
     > * {
       box-sizing: border-box;
       margin: 2rem 3rem;
-      max-width: calc(50% - 6rem);
+      width: calc(50% - 6rem);
       min-width: 30rem;
     }
 
