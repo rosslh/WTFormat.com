@@ -1,0 +1,68 @@
+div.contentWrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+div.root {
+  .header {
+    text-align: center;
+    background: #f4f5f6;
+    border-bottom: .1rem solid #d1d1d1;
+    padding-top: 2.5rem;
+    margin-bottom: 3rem;
+
+    h1.wtformat {
+      color: #353c42;
+      font-size: 3em;
+      margin: 0;
+
+      .wtf {
+        color: #706edb;
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      margin-top: 1.5rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  div.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      box-sizing: border-box;
+      margin: 2rem 3rem;
+      max-width: calc(50% - 6rem);
+      min-width: 30rem;
+    }
+
+    form fieldset {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        margin: 0 0 0 1rem;
+      }
+    }
+
+    table tr:nth-child(1) td {
+      padding-top: 0;
+    }
+
+    h2 {
+      font-size: 2.6rem;
+      margin-bottom: 2.8rem;
+
+      span.line {
+        white-space:nowrap
+      }
+    }
+  }
+}
