@@ -1,4 +1,4 @@
-export const dates = [
+export const dates: number[] = [
   1654820376,
   1725667624,
   1654127316,
@@ -192,7 +192,7 @@ export const dates = [
   1657070942
 ];
 
-export const momentParts = [
+export const momentParts: string[] = [
   'M',
   'Mo',
   'MM',
@@ -223,13 +223,13 @@ export const momentParts = [
   'x'
 ];
 
-export const dateFnParts = [
+export const dateFnParts: string[] = [
   'G',
   'GGGGG',
   'GGGGG',
-  // 'y',
+  'y',
   'yy',
-  'yyyy',
+  // 'yyyy',
   'Q',
   'Qo',
   'QQ',

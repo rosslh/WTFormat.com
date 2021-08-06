@@ -85,7 +85,7 @@ import Vue from 'vue';
 import moment from 'moment';
 
 import { evaluateDate /*, generateDates */ } from '../js/main';
-import { dates } from '../js/constants.js';
+import { dates } from '../js/constants';
 
 interface FormatsInterface {
   moment: string[];
