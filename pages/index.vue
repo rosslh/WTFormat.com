@@ -19,7 +19,10 @@
         <h2>Enter this date in your preferred format:</h2>
         <p>
           <code>
-            {{ time && moment(time).format("h:mm:ss A, dddd, MMMM D, [Q]Q, YYYY") }}
+            {{ typeof window !== "undefined" && time
+              ? moment(time).format("h:mm:ss A, dddd, MMMM D, [Q]Q, YYYY")
+              : '\xa0'.repeat(32)
+            }}
           </code>
         </p>
         <form onsubmit="return false;">
@@ -28,7 +31,7 @@
               ref="userInput"
               v-model="userInput"
               type="text"
-              :placeholder="time && `e.g. ${moment(time).format('YYYY-MM-DD')}`"
+              :placeholder="typeof window !== 'undefined' && time ? `e.g. ${moment(time).format('YYYY-MM-DD')}` : ''"
             >
             <button
               class="button"
@@ -52,25 +55,19 @@
             <tr>
               <td>date-fns</td>
               <td>
-                <code v-for="format in formats.dateFns" :key="format">
-                  {{ format }}
-                </code>
+                <code v-for="format in formats.dateFns" :key="format">{{ format }}</code>
               </td>
             </tr>
             <tr>
               <td>Moment</td>
               <td>
-                <code v-for="format in formats.moment" :key="format">
-                  {{ format }}
-                </code>
+                <code v-for="format in formats.moment" :key="format">{{ format }}</code>
               </td>
             </tr>
             <tr>
               <td>Day.js</td>
               <td>
-                <code v-for="format in formats.dayJs" :key="format">
-                  {{ format }}
-                </code>
+                <code v-for="format in formats.dayJs" :key="format">{{ format }}</code>
               </td>
             </tr>
           </tbody>
@@ -94,13 +91,15 @@ interface FormatsInterface {
 }
 
 interface DataInterface {
-  time: Date;
+  window?: Window;
+  time?: Date;
   userInput: string;
   formats: FormatsInterface;
 }
 
-const time = new Date();
+const time = undefined;
 const data: DataInterface = {
+  window: typeof window !== 'undefined' ? window : undefined,
   time,
   userInput: '',
   formats: { moment: [], dateFns: [], dayJs: [] }
