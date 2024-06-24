@@ -1,6 +1,7 @@
 # WTFormat
 
-## What is this tool?
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e1efe3ab-180f-4ac0-8e71-de864f996862/deploy-status)](https://app.netlify.com/sites/wtformat/deploys)
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m792388136-54c69a8ccd79b274ed4f8105)
 
 Formatting dates is a common task in web development. Date formatting libraries usually require two inputs: a **date** and a **format code**. Figuring out the correct format code for a desired date format can be challenging and time-consuming. For example, achieving the date format `Sat, Jun 24` in Moment.js requires the format code `ddd, MMM D`.
 
