@@ -57,7 +57,7 @@ export default {
   computed: {
     formattedDate() {
       return moment().format("ddd, MMM D");
-    }
-  }
+    },
+  },
 };
 </script>

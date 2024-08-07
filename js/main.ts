@@ -34,28 +34,28 @@ export function evaluateDate(
         moment(timestamp).format(atom),
       escapeMarkers: "[]",
       dateParts: momentParts,
-      preprocess: (str: string) => str
+      preprocess: (str: string) => str,
     },
     dateFns: {
       formatFn: (timestamp: Date, atom: string) => format(timestamp, atom),
       escapeMarkers: "''",
       dateParts: dateFnParts,
-      preprocess: (str: string) => str.replace(/'/g, "''")
+      preprocess: (str: string) => str.replace(/'/g, "''"),
     },
     dayJs: {
       formatFn: (timestamp: Date, atom: string) =>
         dayjs(timestamp).format(atom),
       escapeMarkers: "[]",
       dateParts: dayJsParts,
-      preprocess: (str: string) => str
+      preprocess: (str: string) => str,
     },
     luxon: {
       formatFn: (timestamp: Date, atom: string) =>
         DateTime.fromJSDate(timestamp).toFormat(atom),
       escapeMarkers: "''",
       dateParts: luxonParts,
-      preprocess: (str: string) => str.replace(/'/g, "''")
-    }
+      preprocess: (str: string) => str.replace(/'/g, "''"),
+    },
   }[formatter];
 
   const date = joinSuffixes(group(config.preprocess(currentDate)));
@@ -65,14 +65,14 @@ export function evaluateDate(
     let newPossibilities: string[] = [];
     if (!part.match(/^[a-zA-Z0-9]+$/)) {
       newPossibilities = newPossibilities.concat(
-        possibilities.map(x => x + part)
+        possibilities.map((x) => x + part)
       );
     } else {
       let matchFound = false;
       for (const atom of config.dateParts) {
         if (part === config.formatFn(timestamp, atom)) {
           newPossibilities = newPossibilities.concat(
-            possibilities.map(x => x + atom)
+            possibilities.map((x) => x + atom)
           );
           matchFound = true;
         }
@@ -80,7 +80,7 @@ export function evaluateDate(
       if (!matchFound) {
         newPossibilities = newPossibilities.concat(
           possibilities.map(
-            x =>
+            (x) =>
               `${x}${config.escapeMarkers[0]}${part}${config.escapeMarkers[1]}`
           )
         );
@@ -88,7 +88,7 @@ export function evaluateDate(
     }
     possibilities = newPossibilities;
   }
-  return possibilities.filter(date => date);
+  return possibilities.filter((date) => date);
 }
 
 export function generateDates() {
