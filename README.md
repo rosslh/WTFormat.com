@@ -4,9 +4,9 @@ Formatting dates is a common task in web development. Date formatting libraries 
 
 [WTFormat.com](https://wtformat.com/) simplifies this process. This user-friendly tool gives you a date which you then rewrite in your desired format. When you click "generate", WTFormat outputs the corresponding format code for various popular date libraries, including [date-fns](https://date-fns.org/), [Moment.js](http://momentjs.com/), [Day.js](https://day.js.org/en/), and [Luxon](https://moment.github.io/luxon/). This eliminates the need to memorize or search for format codes, saving you time and effort.
 
-![Netlify](https://img.shields.io/netlify/e1efe3ab-180f-4ac0-8e71-de864f996862?style=flat-square&label=Netlify)
-![Uptime Robot status](https://img.shields.io/uptimerobot/status/m792388136-54c69a8ccd79b274ed4f8105?up_message=online&style=flat-square&label=Status)
-![Uptime Robot ratio (30 days)](<https://img.shields.io/uptimerobot/ratio/m792388136-54c69a8ccd79b274ed4f8105?style=flat-square&label=Uptime%20(1mo)>)
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m792388136-54c69a8ccd79b274ed4f8105?up_message=online&style=flat&label=Status)
+![Uptime Robot ratio (30 days)](<https://img.shields.io/uptimerobot/ratio/m792388136-54c69a8ccd79b274ed4f8105?style=flat&label=Uptime%20(1mo)>)
+[![Hosted in Canada with MapleDeploy](https://mapledeploy.ca/api/badge/shields)](https://mapledeploy.ca)
 
 ## Who can benefit from WTFormat?
 
