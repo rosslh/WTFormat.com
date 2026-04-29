@@ -1,12 +1,26 @@
-# WTFormat.com
+<p align="center">
+  <a href="https://wtformat.com">
+    <img src="https://raw.githubusercontent.com/rosslh/wtformat.com/master/icon.png" height="50px" width="50px" alt="WTFormat.com icon">
+  </a>
+</p>
+
+<h1 align="center">WTFormat.com</h1>
+
+<p align="center">
+  <a href="https://wtformat.com">WTFormat.com</a> is a tool that simplifies date formatting in JavaScript. You write a date in your desired format, and WTFormat outputs the corresponding format code for popular date libraries including <a href="https://date-fns.org/">date-fns</a>, <a href="http://momentjs.com/">Moment.js</a>, <a href="https://day.js.org/en/">Day.js</a>, and <a href="https://moment.github.io/luxon/">Luxon</a>.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/uptimerobot/status/m792388136-54c69a8ccd79b274ed4f8105?up_message=online&style=flat&label=Status" alt="Uptime Robot status">
+  <img src="https://img.shields.io/uptimerobot/ratio/m792388136-54c69a8ccd79b274ed4f8105?style=flat&label=Uptime%20(1mo)" alt="Uptime Robot ratio (30 days)">
+  <a href="https://mapledeploy.ca"><img src="https://mapledeploy.ca/api/badge/shields" alt="Hosted in Canada with MapleDeploy"></a>
+</p>
+
+## Overview
 
 Formatting dates is a common task in web development. Date formatting libraries usually require two inputs: a **date** and a **format code**. Figuring out the correct format code for a desired date format can be challenging and time-consuming. For example, achieving the date format `Sat, Jun 24` in Moment.js requires the format code `ddd, MMM D`.
 
-[WTFormat.com](https://wtformat.com/) simplifies this process. This user-friendly tool gives you a date which you then rewrite in your desired format. When you click "generate", WTFormat outputs the corresponding format code for various popular date libraries, including [date-fns](https://date-fns.org/), [Moment.js](http://momentjs.com/), [Day.js](https://day.js.org/en/), and [Luxon](https://moment.github.io/luxon/). This eliminates the need to memorize or search for format codes, saving you time and effort.
-
-![Uptime Robot status](https://img.shields.io/uptimerobot/status/m792388136-54c69a8ccd79b274ed4f8105?up_message=online&style=flat&label=Status)
-![Uptime Robot ratio (30 days)](<https://img.shields.io/uptimerobot/ratio/m792388136-54c69a8ccd79b274ed4f8105?style=flat&label=Uptime%20(1mo)>)
-[![Hosted in Canada with MapleDeploy](https://mapledeploy.ca/api/badge/shields)](https://mapledeploy.ca)
+WTFormat eliminates the need to memorize or search for format codes, saving you time and effort.
 
 ## Who can benefit from WTFormat?
 
