@@ -7,7 +7,7 @@
 <h1 align="center">WTFormat.com</h1>
 
 <p align="center">
-  <a href="https://wtformat.com">WTFormat.com</a> is a tool that simplifies date formatting in JavaScript. You write a date in your desired format, and WTFormat outputs the corresponding format code for popular date libraries including <a href="https://date-fns.org/">date-fns</a>, <a href="http://momentjs.com/">Moment.js</a>, <a href="https://day.js.org/en/">Day.js</a>, and <a href="https://moment.github.io/luxon/">Luxon</a>.
+  <a href="https://wtformat.com">WTFormat.com</a> generates date format codes for <a href="https://date-fns.org/">date-fns</a>, <a href="http://momentjs.com/">Moment.js</a>, <a href="https://day.js.org/en/">Day.js</a>, and <a href="https://moment.github.io/luxon/">Luxon</a>. Type a date the way you want it to look, and get back the corresponding format string for each library.
 </p>
 
 <p align="center">
@@ -16,20 +16,12 @@
   <a href="https://mapledeploy.ca"><img src="https://mapledeploy.ca/api/badge/shields" alt="Hosted in Canada with MapleDeploy"></a>
 </p>
 
-## Overview
+## How it works
 
-Formatting dates is a common task in web development. Date formatting libraries usually require two inputs: a **date** and a **format code**. Figuring out the correct format code for a desired date format can be challenging and time-consuming. For example, achieving the date format `Sat, Jun 24` in Moment.js requires the format code `ddd, MMM D`.
+Each JavaScript date library uses its own format tokens. `Sat, Jun 24` is `ddd, MMM D` in Moment.js, `EEE, MMM d` in date-fns, and `ccc, LLL d` in Luxon. Memorizing these is tedious, and looking them up breaks your flow.
 
-WTFormat eliminates the need to memorize or search for format codes, saving you time and effort.
+WTFormat skips the lookup. You type the date as you want it rendered, click "generate", and the app returns the matching format code for every supported library side by side. Copy the one you need and paste it into your project.
 
-## Who can benefit from WTFormat?
+## Built with
 
-**Front-End Developers:** Quickly implement consistent date formats without needing to look up format codes.
-
-**Full-Stack Developers:** Seamlessly transition between projects using different date libraries.
-
-**Beginners:** Learn how different libraries handle date formatting through an easy-to-understand interface.
-
-**Project Managers:** Communicate desired date formats clearly and effectively to developers.
-
-WTFormat is a valuable tool for developers of all skill levels. It streamlines the date formatting process, saving time and reducing frustration. By making date formatting easier, WTFormat contributes to increased productivity and improved code quality. As web development continues to evolve, tools like WTFormat play a crucial role in simplifying common tasks and allowing developers to focus on creating innovative and engaging web experiences.
+[Nuxt.js](https://nuxt.com/), [Vue](https://vuejs.org/), and [TypeScript](https://www.typescriptlang.org/).
