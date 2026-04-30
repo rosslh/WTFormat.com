@@ -1,13 +1,13 @@
 <p align="center">
   <a href="https://wtformat.com">
-    <img src="https://raw.githubusercontent.com/rosslh/wtformat.com/master/icon.png" height="50px" width="50px" alt="WTFormat.com icon">
+    <img src="https://raw.githubusercontent.com/rosslh/wtformat.com/master/icon.png" height="50px" width="50px" alt="WTFormat icon">
   </a>
 </p>
 
-<h1 align="center">WTFormat.com</h1>
+<h1 align="center">WTFormat</h1>
 
 <p align="center">
-  <a href="https://wtformat.com">WTFormat.com</a> generates date format codes for <a href="https://date-fns.org/">date-fns</a>, <a href="http://momentjs.com/">Moment.js</a>, <a href="https://day.js.org/en/">Day.js</a>, and <a href="https://moment.github.io/luxon/">Luxon</a>. Type a date the way you want it to look, and get back the corresponding format string for each library.
+  <a href="https://wtformat.com">WTFormat</a> generates date format codes for <a href="https://date-fns.org/">date-fns</a>, <a href="http://momentjs.com/">Moment.js</a>, <a href="https://day.js.org/en/">Day.js</a>, and <a href="https://moment.github.io/luxon/">Luxon</a>. Type a date the way you want it to look, and get back the corresponding format string for each library.
 </p>
 
 <p align="center">
