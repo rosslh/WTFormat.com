@@ -13,7 +13,7 @@
 <p align="center">
   <img src="https://img.shields.io/uptimerobot/status/m792388136-54c69a8ccd79b274ed4f8105?up_message=online&style=flat&label=Status" alt="Uptime Robot status">
   <img src="https://img.shields.io/uptimerobot/ratio/m792388136-54c69a8ccd79b274ed4f8105?style=flat&label=Uptime%20(1mo)" alt="Uptime Robot ratio (30 days)">
-  <a href="https://mapledeploy.ca"><img src="https://mapledeploy.ca/api/badge/shields" alt="Hosted in Canada with MapleDeploy"></a>
+  <a href="https://mapledeploy.ca/?utm_source=badge&utm_medium=referral&utm_campaign=server-f1b4d852&utm_content=markdown-shields"><img src="https://mapledeploy.ca/api/badge/shields" alt="Hosted in Canada with MapleDeploy"></a>
 </p>
 
 ## How it works
